@@ -1,16 +1,10 @@
-# This is a sample Python script.
+names_list = []
+with open("/Users/benjamin.chinwe/PycharmProjects/MailMerge/Input/Names/invited_names.txt") as f:
+    name = f.read()
+    with open("/Users/benjamin.chinwe/PycharmProjects/MailMerge/Input/Letters/starting_letter.txt") as f:
+        letter = f.read()
+        letter = letter.replace('[name]', name)
+        print(letter)
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    with open(f"/Users/benjamin.chinwe/PycharmProjects/MailMerge/Output/ReadyToSend/{name}.txt") as f:
+        f.write(letter)
