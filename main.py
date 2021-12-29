@@ -10,10 +10,11 @@ with open("./Input/Letters/starting_letter.txt") as fletter:
 #   Insert invitees name into temple letter
 inviteLetter = []
 for name in names_list:
-    inviteLetter = letter.replace('[name]', f"{name.strip()}")
+    new_name = name.strip()
+    inviteLetter = letter.replace('[name]', f"{new_name}")
 
     # Write the invite letters to file
-    with open(f"./Output/ReadyToSend/{name.strip()}.txt", mode="w") as f:
+    with open(f"./Output/ReadyToSend/Letter_for_{new_name}.txt", mode="w") as f:
         print(inviteLetter)
         f.write(inviteLetter)
 
