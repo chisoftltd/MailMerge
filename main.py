@@ -10,7 +10,6 @@ with open("/Users/benjamin.chinwe/PycharmProjects/MailMerge/Input/Letters/starti
 #   Insert invitees name into temple letter
 inviteLetter = []
 for name in names_list:
-    print(f"{name}")
     inviteLetter = letter.replace('[name]', f"{name}")
 
     # Write the invite letters to file
