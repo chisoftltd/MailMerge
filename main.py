@@ -1,6 +1,8 @@
 names_list = []
 with open("/Users/benjamin.chinwe/PycharmProjects/MailMerge/Input/Names/invited_names.txt") as f:
-    name = f.read()
+    names_list.append(f.read())
+
+for name in names_list:
     with open("/Users/benjamin.chinwe/PycharmProjects/MailMerge/Input/Letters/starting_letter.txt") as f:
         letter = f.read()
         letter = letter.replace('[name]', name)
